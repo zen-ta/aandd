@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script>
+        function runButtonPressed() {
+            var numbers = [];
+            numbers.push(13);
+            numbers.push(8);
+            numbers.push(21);
+            numbers.push(5);
+            show(numbers);
+            show(numbers[2]);//２番目を表示する
+            numbers[2] = 100;//２番目を書き換える
+            show(numbers);
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>ex1-2</h1>
+    <button onclick="runButtonPressed()">run!</button>
+    <p id="res"></p>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script>
+        function runButtonPressed() {
+            var numbers = [];
+            numbers.push(13);
+            numbers.push(8);
+            numbers.push(21);
+            numbers.push(5);
+            for (var i = 0; i < numbers.length; i++) {
+                console.log(numbers[i]);
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>ex0-3</h1>
+    <button onclick="runButtonPressed()">run!</button>
+    <p id="res"></p>
+</body>
+
+</html>

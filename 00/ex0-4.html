@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script>
+        function runButtonPressed() {
+            var numbers = [];
+            numbers.push(13);
+            numbers.push(8);
+            numbers.push(21);
+            numbers.push(5);
+            var html = '';
+            html = html + '<table border="1">';
+            html = html + '<tr>';
+            for (var i = 0; i < numbers.length; i++) {
+                html = html + '<td>' + numbers[i] + '</td>';
+            }
+            html = html + '</tr>';
+            html = html + '</table>';
+            //document.getElementById('res').innerHTML = html;
+            document.getElementById('res').insertAdjacentHTML('beforeend', html);
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>ex0-4</h1>
+    <button onclick="runButtonPressed()">run!</button>
+    <p id="res"></p>
+</body>
+
+</html>
