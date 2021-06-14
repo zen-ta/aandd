@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script>
+
+        var nouns;
+
+        // $(document).ready(async function () {//何故か動かない．分かる人教えて下さい        
+        $(window).load(async function () {
+            var nountext = await get('nouns.txt');
+            nouns = nountext.split('\r\n');
+        });
+
+        async function runButtonPressed() {
+            var noun = selectone(nouns);
+            show(noun);
+        }
+
+        function selectone(array) {
+            var size = array.length;
+            var index = Math.floor(Math.random() * size);
+            return array[index];
+        }
+
+        //以下の関数は，aandd.jsへコピーしてください．
+        function get(url) {
+            return new Promise(function (resolve) {
+                $.get(url, function (data) {
+                    resolve(data);
+                });
+            });
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <h1>読み込み，選ぶ</h1>
+    <button onclick="runButtonPressed()">run!</button>
+    <p id="res"></p>
+    <hr>
+    <p>このプログラムは，（セキュリティ制約の問題で）ローカルサーバ経由でのみ動作します．</p>
+    macの場合は，ターミナルでaanddフォルダに移動した上で，
+    <pre>%python -m SimpleHTTPServer 8000</pre>
+    または，
+    <pre>%python -m http.server 8000</pre>
+    とコマンドをうち，http://localhost:8000/にアクセスします．
+    <p>windowsの場合，ソフトをインストールする．
+        例えば，こちら
+        https://blackbird-blog.com/windows-kantan-webserver
+        などいかがでしょう？
+    </p>
+    <p>chromeの設定によりクロスサイトスクリプトを許すようにしても解決できると思われます．</p>
+
+</body>
+
+</html>
