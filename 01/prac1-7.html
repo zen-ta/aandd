@@ -9,22 +9,28 @@
     <script type="text/javascript" src="../jquery.min.js"></script>
 
     <script>
+        function createSequentiaNumbers(array,n){
+            for (var j = 1;j <=n;j++){
+                array.push(j);
+            }
+            return array;
+        }
         function runButtonPressed() {
             var numbers = [];
-            //prac1-7 1からNまでの数を順にN個挿入する関数を作る
-            //関数名：createSequentialNumbers(array, n)
-            //できたら，関数定義をaandd.jsに移す
-            //prac1-8 N個の乱数を挿入する関数を作る
-            //関数名：createRandomNumbers(array, n)
-            //できたら，関数定義をaandd.jsに移す
+            var x= document.getElementById('number').value;
+            createSequentiaNumbers(numbers,x);
             show(numbers);
         }
+    //prac1-7 1からNまでの数を順にN個挿入する関数を作る
+    //関数名：createSequentialNumbers(array, n)
+    //できたら，関数定義をaandd.jsに移す
     </script>
 
 </head>
 
 <body>
     <h1>prac1-7</h1>
+    <input id="number"  type="textfield">
     <button onclick="runButtonPressed()">run!</button>
     <p id="res"></p>
 </body>
