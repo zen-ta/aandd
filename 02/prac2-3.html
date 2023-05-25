@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script>
+        function runButtonPressed() {
+            var numbers =[];
+            for (var i =1;i <=10;i++){
+                numbers.push(i);
+            }
+            for(var j =1;j <=20;j++){
+            n= Math.floor(Math.random()*10);
+            m = Math.floor(Math.random()*10);
+            var temp = numbers[n];
+            numbers[n]=numbers[m];
+            numbers[m]= temp;
+            }
+            //(nとmは乱数にて決定する)
+            //prac2-3 prac2-2を20回繰り返す（シャッフルプログラムの完成）
+            show(numbers);
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>prac2</h1>
+    <button onclick="runButtonPressed()">run!</button>
+    <p id="res"></p>
+</body>
+
+</html>
